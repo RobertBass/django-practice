@@ -20,7 +20,7 @@ class Author(models.Model):
     
     def __str__(self):
         return f"Author: {self.name}"
-    
+
 class Book(models.Model):
     title = models.TextField(max_length=100)
     authors = models.ManyToManyField(Author)
