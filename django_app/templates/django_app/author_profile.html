@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors Profile</title>
+</head>
+<body>
+    <h1>Author Profile</h1>
+    <h2>Name: <p style="color: green;">{{ author_profile.name }} </p></h2>
+     
+        {% if author_profile.profile%}
+            <h2>Website:
+                <p style="text-decoration: underline; color: blue">{{ author_profile.profile.website }} </p>
+            </h2>
+            <h2>Biography: 
+                <p style="color: dodgerblue">{{ author_profile.profile.biography }} </p>
+            </h2>
+        {% else %}
+            <h2>Website:
+                <p style="color: red;">No website</p>
+            </h2>
+            <h2>Biography: 
+                <p style="color: red;">No biography</p>
+            </h2>
+        {% endif %}
+</body>
+</html>

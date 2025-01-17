@@ -23,8 +23,30 @@ python manage.py runserver
 python manage.py makemigrations
 python manage.py migrate
 ```
-# Sqlite shell
+## Sqlite shell
 ```bash
 # Sqlite is installed by default with django
 ./manage.py dbshell
+```
+
+# Samples
+```bash
+from django_app.models import Book, Author, Publisher
+
+# create Publisher
+publisher = Publisher(name="Penguin")
+publisher.save()
+
+# create Authors
+author = Author(name="Author Name")
+author.save()
+another_author = Author(name="Another Author Name")
+another_author.save()
+
+#Create Book
+book = Book(title="Book Title",  publisher=publisher, publication_date="2020-07-16")
+book.save()
+
+#Add Authors to Book
+book.authors.set([author, another_author])
 ```
